@@ -1,0 +1,6 @@
+node_modules/
+.env
+.DS_Store
+.rpc-key
+.rpc-key.bootstrap
+.rpc-tcp

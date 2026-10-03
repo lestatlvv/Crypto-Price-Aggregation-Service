@@ -1,0 +1,42 @@
+{
+  "name": "tether-price-aggregation",
+  "version": "1.0.0",
+  "description": "Cryptocurrency price aggregation service",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:mock": "COINGECKO_API_MODE=mock node src/index.js",
+    "start:rpc": "RPC_ENABLED=true node src/index.js",
+    "start:rpc:local": "RPC_ENABLED=true RPC_BOOTSTRAP=local node src/index.js",
+    "rpc:client": "node src/rpc/client.js",
+    "collect": "node src/collect.js",
+    "collect:mock": "COINGECKO_API_MODE=mock node src/collect.js",
+    "collect:real": "COINGECKO_API_MODE=real node src/collect.js",
+    "mock": "node src/mock/coingeckoServer.js",
+    "test": "node --test --test-concurrency=1 --test-timeout=30000 tests/unit/*.test.js tests/integration/*.test.js tests/e2e/*.test.js",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:integration": "node --test --test-concurrency=1 --test-timeout=30000 tests/integration/*.test.js",
+    "test:e2e": "node --test --test-concurrency=1 --test-timeout=30000 tests/e2e/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "dependencies": {
+    "@hyperswarm/dht": "^5.0.25",
+    "@hyperswarm/rpc": "^2.2.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.10.4"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.4.3",
+    "supertest": "^7.3.1"
+  },
+  "allowScripts": {
+    "mongodb-memory-server@10.4.3": true,
+    "sodium-native@4.3.3": true,
+    "sodium-native@3.4.1": true,
+    "sodium-native@5.1.0": true,
+    "utp-native@2.5.3": true
+  }
+}
