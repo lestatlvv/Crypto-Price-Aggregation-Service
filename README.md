@@ -190,6 +190,13 @@ If the public DHT is blocked on your network, run a local bootstrap node with [h
 hyperdht --bootstrap --host 127.0.0.1 --port 30001
 ```
 
+## Start REST API and RPC Services from the Command Line
+
+```bash
+RPC_ENABLED=true COINGECKO_API_MODE=real PORT=3000 MONGODB_URI=mongodb://127.0.0.1:27017 MONGODB_DB=crypto_prices node src/index.js
+```
+
+
 ## Data model
 
 Collection: `price_samples`
